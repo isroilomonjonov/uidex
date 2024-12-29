@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+@use "../abstracts/mixins" as mixins;
+.hero {
+  padding-top: 67px;
+  background-color: $hero-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  @include mixins.media-xl {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  height: 100vh;
+  &__left-side {
+    &__title {
+      font-family: "Space Grotesk";
+      font-size: 70px;
+      @include mixins.media-lg {
+        font-size: 80px;
+      }
+      font-weight: 900;
+      color: #2e373c;
+      max-width: 454px;
+      margin-bottom: 24px;
+    }
+    &__desc {
+      color: #42484b;
+      max-width: 410px;
+      margin-bottom: 40px;
+    }
+  }
+  &__right-side {
+    width: auto;
+    &__image {
+      width: 100%;
+      @include mixins.media-md {
+        width: 600px;
+      }
+      @include mixins.media-xl {
+        width: 611px;
+      }
+    }
+  }
+}

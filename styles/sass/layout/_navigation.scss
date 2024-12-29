@@ -1,0 +1,54 @@
+@use "../abstracts/mixins" as mixins;
+@use "../base/typography" as *;
+@use "../abstracts/variables" as *;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: {
+    top: 14px;
+    bottom: 14px;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    &-image {
+      @include mixins.size(45px, 45px);
+    }
+    &-text {
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
+.menu {
+  display: none;
+  @include mixins.media-xl {
+    display: flex;
+    align-items: center;
+  }
+  gap: 35px;
+  list-style-type: none;
+  &__item {
+    border-bottom: 2px solid white;
+    a {
+      color: #151515;
+    }
+    &:hover {
+      border-bottom: 2px solid $main-color-blue;
+      a {
+        color: $main-color-blue;
+      }
+    }
+  }
+  &__item--active {
+    border-bottom: 2px solid $main-color-blue;
+    a {
+      color: $main-color-blue;
+    }
+  }
+}

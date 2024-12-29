@@ -1,0 +1,28 @@
+@use "../abstracts/mixins" as mixins;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  max-width: 1990px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding: 0px 20px;
+  @include mixins.media-sm {
+    padding: 0px 40px;
+  }
+  @include mixins.media-md {
+    padding: 0px 60px;
+  }
+  @include mixins.media-xl {
+    padding: 0px 80px;
+  }
+}
